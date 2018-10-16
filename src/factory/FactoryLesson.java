@@ -25,54 +25,54 @@ public class FactoryLesson {
         factory.create().printPrice();                  //outputs "10"
         new ChocoFactory(0).create().printPrice(); //outputs "15"
     }
+}
 
-    //what are we creating? - Chocolate
-    //chocolate object called entity
-    interface Chocolate{
+//what are we creating? - Chocolate
+//chocolate object called entity
+interface Chocolate{
 
-        void printPrice();
+    void printPrice();
+}
+
+class WhiteChocolate implements Chocolate{
+
+    private final int price = 15;
+
+    @Override
+    public void printPrice() { System.out.println("Price: " + this.price); }
+}
+
+class DarkChocolate implements Chocolate{
+
+    private final int price = 10;
+
+    @Override
+    public void printPrice() { System.out.println("Price: " + this.price); }
+}
+
+//with the help of what we creating entities? - Factory
+abstract class Factory{
+    //state
+    int flag;
+    //constructor is protected to prevent instantiation
+    protected Factory(int flag){ this.flag = flag; }
+    //method, that returns product
+    abstract Chocolate create();
+}
+
+//factory "implementation"
+class ChocoFactory extends Factory{
+
+    public ChocoFactory(int flag) {
+        super(flag);
     }
 
-    class WhiteChocolate implements Chocolate{
-
-        private final int price = 15;
-
-        @Override
-        public void printPrice() { System.out.println("Price: " + this.price); }
-    }
-
-    class DarkChocolate implements Chocolate{
-
-        private final int price = 10;
-
-        @Override
-        public void printPrice() { System.out.println("Price: " + this.price); }
-    }
-
-    //with the help of what we creating entities? - Factory
-    abstract class Factory{
-        //state
-        int flag;
-        //constructor is protected to prevent instantiation
-        protected Factory(int flag){ this.flag = flag; }
-        //method, that returns product
-        abstract Chocolate create();
-    }
-
-    //factory "implementation"
-    class ChocoFactory extends Factory{
-
-        public ChocoFactory(int flag) {
-            super(flag);
-        }
-
-        @Override
-        Chocolate create() {
-            switch (flag){
-                case 0: return new WhiteChocolate();
-                case 1: return new DarkChocolate();
-                default: throw new IllegalArgumentException();
-            }
+    @Override
+    Chocolate create() {
+        switch (flag){
+            case 0: return new WhiteChocolate();
+            case 1: return new DarkChocolate();
+            default: throw new IllegalArgumentException();
         }
     }
 }
