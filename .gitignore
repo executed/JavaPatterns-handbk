@@ -1,0 +1,5 @@
+# next files should be ignored
+src/*/*Training.java
+patterns.iml
+out/
+.idea/
