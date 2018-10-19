@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /* Pattern: Observer
+   (Behavioral pattern)
  * ********************
  * DESCRIPTION
  * ********************

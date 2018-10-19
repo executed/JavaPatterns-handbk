@@ -1,6 +1,7 @@
 package factory;
 
 /* Pattern: Factory
+ * (Creational pattern)
  * ********************
  * DESCRIPTION
  * ********************
