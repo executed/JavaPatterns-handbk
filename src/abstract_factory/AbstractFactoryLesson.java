@@ -6,6 +6,7 @@ import java.util.List;
 public class AbstractFactoryLesson {
 
     /* Pattern: Abstract Factory
+     * (Creational pattern)
      * ********************
      * DESCRIPTION
      * ********************
