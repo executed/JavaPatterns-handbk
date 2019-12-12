@@ -37,9 +37,9 @@ import java.util.List;
  * - Должна быть обеспечена возможность АВТОМАТИЧЕСКОГО оповещения, в некторых случаях, БОЛЬШОГО кол-ва объектов.
  * - Должно быть возможным автоматическое оповещение, в некторых случаях, БОЛЬШОГО кол-ва объектов.
  */
-public class ObserverLesson{
+public class ObserverLesson {
 
-    public void main(){
+    public void main() {
         ConcreteSubject subject = new ConcreteSubject();
         ConcreteObserver1 observer1 = new ConcreteObserver1("Observer 1", subject);
         ConcreteObserver2 observer2 = new ConcreteObserver2("Observer 2", subject);
